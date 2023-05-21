@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 297671441877343634}
   - component: {fileID: 3358877012908940191}
   m_Layer: 5
-  m_Name: "\u0130tem"
+  m_Name: Item
   m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
