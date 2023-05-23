@@ -8,6 +8,9 @@ TagManager:
   - first
   - second
   - third
+  - Canvas
+  - Destroy
+  - Filled
   layers:
   - Default
   - TransparentFX

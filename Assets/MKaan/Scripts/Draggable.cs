@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,7 +8,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     [HideInInspector] public static bool releasedTetromino = false;
     bool releasedtetromino2 = false;
 
-    public GameObject ItemSlotsCollider;
+    GameObject ItemSlotsCollider;
 
     Draggable draggable;
 
@@ -17,14 +18,22 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public static bool InArea;
     bool InArea2;
 
+    public static bool FilledSlot;
+    bool FilledSlot2;
+
     public GameObject LeftBottomCornerBound;
     public GameObject RightTopCornerBound;
 
+    //List<GameObject> createdTetrominoes;
     void Start()
     {
         ItemSlotsCollider = GameObject.FindWithTag("Canvas");
+
         draggable = GetComponent<Draggable>();
+
         currentPosition = transform.position;
+
+        //createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
     }
 
     void ManuelDetector()
@@ -32,14 +41,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if(LeftBottomCornerBound == null || RightTopCornerBound == null)
             return;
 
-        if (LeftBottomCornerBound.transform.position.x > 290 
-            && LeftBottomCornerBound.transform.position.x < 1130 
-            && LeftBottomCornerBound.transform.position.y > 125 
-            && LeftBottomCornerBound.transform.position.y < 970 
-            && RightTopCornerBound.transform.position.x > 290 
-            && RightTopCornerBound.transform.position.x < 1130 
-            && RightTopCornerBound.transform.position.y > 125 
-            && RightTopCornerBound.transform.position.y < 970)
+        if (LeftBottomCornerBound.transform.position.x > 170 
+            && LeftBottomCornerBound.transform.position.x < 1015 
+            && LeftBottomCornerBound.transform.position.y > 120 
+            && LeftBottomCornerBound.transform.position.y < 960 
+            && RightTopCornerBound.transform.position.x > 170 
+            && RightTopCornerBound.transform.position.x < 1015 
+            && RightTopCornerBound.transform.position.y > 120 
+            && RightTopCornerBound.transform.position.y < 960)
         {
             InArea = true;
             InArea2 = true;
@@ -60,7 +69,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             draggable.enabled = false;
         }
-        //print(FilledSlot);
 
         if (InArea2 == false && FilledSlot2 == true)
         {
@@ -90,24 +98,20 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if(InArea == false || FilledSlot == true)
         {
-            //MakeItDisactive = true;
-            //transform.position = currentPosition;
+
             Destroy(gameObject,0.1f);
             Instantiate(gameObject, currentPosition, Quaternion.identity,ItemSlotsCollider.transform);
-        }//
+        }
         
             
-        //
         if(InArea == true)
         {
             gameObject.tag = "Filled";
         }
-        //
+        
     }
-    public static bool FilledSlot;//
-    bool FilledSlot2;
 
-    private void OnTriggerStay2D(Collider2D collision)//
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Filled")
         {
@@ -117,15 +121,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (collision.gameObject.tag == "Destroy")
         {
             Destroy(gameObject,0.25f);
+            //createdTetrominoes.Remove(transform.parent.gameObject);
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)//
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Filled")
         {
             FilledSlot = false;
             FilledSlot2 = false;
         }
-    }//
+    }
 
 }
