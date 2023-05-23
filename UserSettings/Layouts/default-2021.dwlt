@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1536
     height: 780.8
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 91
+  controlID: 55
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 18
+  controlID: 17
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 19
+  controlID: 18
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -318,22 +318,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/MKaan
+    - Assets/MKaan/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/MKaan
+  - Assets/MKaan/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Kaan\Desktop\KiloGames
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 2.2000122}
-    m_SelectedIDs: 7a610000
-    m_LastClickedID: 24954
-    m_ExpandedIDs: 00000000046100007a61000000ca9a3bffffff7f
+    m_SelectedIDs: 74620000
+    m_LastClickedID: 25204
+    m_ExpandedIDs: 00000000ca6100003862000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -361,7 +361,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000004610000
+    m_ExpandedIDs: 00000000ca610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -491,23 +491,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be610000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 44ecffff2afbffffd45d0000
+      m_SelectedIDs: 445e0000
+      m_LastClickedID: 24132
+      m_ExpandedIDs: 2afbffffae5d0000d85d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Rod4x1
-        m_OriginalName: Rod4x1
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 24160
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -798,9 +798,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1085.1078, y: 603.5025, z: -59.945374}
+    m_Target: {x: 1026.3398, y: 623.07416, z: 7.270813}
     speed: 2
-    m_Value: {x: 1085.1078, y: 603.5025, z: -59.945374}
+    m_Value: {x: 1026.3398, y: 623.07416, z: 7.270813}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -847,13 +847,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.107493006, y: -0.011339779, z: 0.0012256266, w: 0.9941293}
+    m_Target: {x: 0.067157835, y: 0.0020890215, z: -0.00014112392, w: 0.997729}
     speed: 2
-    m_Value: {x: 0.1074942, y: -0.011339905, z: 0.0012256402, w: 0.9941403}
+    m_Value: {x: 0.06715858, y: 0.0020890448, z: -0.00014112549, w: 0.99774015}
   m_Size:
-    m_Target: 407.2304
+    m_Target: 506.9598
     speed: 2
-    m_Value: 407.2304
+    m_Value: 506.9598
   m_Ortho:
     m_Target: 0
     speed: 2
