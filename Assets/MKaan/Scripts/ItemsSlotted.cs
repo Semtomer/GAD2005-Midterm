@@ -16,7 +16,7 @@ public class ItemsSlotted : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Draggable.releasedTetromino == true && Draggable.InArea == true)
+        if (Draggable.releasedTetromino == true && Draggable.InArea == true && Draggable.FilledSlot == false)
         {
             _collider.enabled = false;
             transform.position = collision.transform.position;
