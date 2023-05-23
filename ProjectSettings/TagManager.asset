@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Tiles
+  - first
+  - second
+  - third
   layers:
   - Default
   - TransparentFX

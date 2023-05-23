@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,12 +19,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public GameObject LeftBottomCornerBound;
     public GameObject RightTopCornerBound;
 
+    //List<GameObject> createdTetrominoes;
+
     void Start()
     {
         ItemSlotsCollider = GetComponentInChildren<Collider2D>();
         draggable = GetComponent<Draggable>();
         currentPosition = transform.position;
+
+        //createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
     }
+
 
     void ManuelDetector()
     {
@@ -57,11 +63,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         firstPick = true;
         releasedTetromino = false;
+
+        //eventData.pointerEnter.transform.parent.localScale = new Vector3(.9f, .9f, 1f);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        transform.position = Input.mousePosition;      
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -69,8 +77,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         releasedTetromino = true;
         firstPick = false;
 
-        if(InArea == false)
+        if(InArea == false) 
+        {
             transform.position = currentPosition;
+
+            //eventData.pointerEnter.transform.parent.localScale = new Vector3(.9f, .9f, 1f);
+        }
+        else
+        {
+            //eventData.pointerEnter.transform.parent.localScale = new Vector3(.5f, .5f, 1f);
+        }                
     }
     
 }

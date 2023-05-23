@@ -3,18 +3,20 @@ using UnityEngine;
 
 public class TetrominoGenerator : ITetrominoGenerator
 {
-    public Tetromino[] GenerateRandomTetrominoes(int count)
+    public static string[] tags = new string[] { "first", "second", "third"};
+
+    public Tetromino[] GenerateRandomTetrominoes(int count, GameObject[] tetrominoShapeList)
     {
         Tetromino[] tetrominoes = new Tetromino[count];
 
         for (int i = 0; i < count; i++)
-        {                      
+        {
             Tetromino tetromino = new Tetromino();
 
-            tetromino.Type = GetRandomTetrominoType();
+            tetromino.Shape = tetrominoShapeList[GetRandomTetrominoTypeIndex()];
             tetromino.RotationAngle = GetRandomRotationAngle();
-            tetromino.ShapeData = TetrominoShapeData.getShapeDataForDegrees(tetromino.Type, tetromino.RotationAngle);
             tetromino.Color = GetRandomColor();
+            tetromino.Tag = tags[i];
             
             tetrominoes[i] = tetromino;
         }
@@ -22,10 +24,10 @@ public class TetrominoGenerator : ITetrominoGenerator
         return tetrominoes;
     }
 
-    private TetrominoType GetRandomTetrominoType()
+    private int GetRandomTetrominoTypeIndex()
     {
         TetrominoType[] tetrominoTypes = (TetrominoType[])System.Enum.GetValues(typeof(TetrominoType));
-        return tetrominoTypes[Random.Range(0, tetrominoTypes.Length)];
+        return Random.Range(0, tetrominoTypes.Length);
     }
 
     private Color GetRandomColor()
