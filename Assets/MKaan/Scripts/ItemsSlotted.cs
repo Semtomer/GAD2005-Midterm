@@ -5,13 +5,16 @@ using UnityEngine;
 public class ItemsSlotted : MonoBehaviour
 {
     Collider2D _collider;
+
     List<GameObject> createdTetrominoes;
+    GameController gameController;
 
     void Start()
     {
         _collider = GetComponent<Collider2D>();
 
-        createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+        createdTetrominoes = gameController.createdTetrominoes;
     }
 
     private void OnTriggerStay2D(Collider2D collision)

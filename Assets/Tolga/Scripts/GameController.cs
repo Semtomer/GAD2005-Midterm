@@ -17,17 +17,23 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         tetrominoGenerator = new TetrominoGenerator();
+        InstantiateTetromino();
     }
 
     private void Update()
     {
         if (createdTetrominoes.Count == 0)
         {
+            Debug.Log(createdTetrominoes.Count);
             InstantiateTetromino();
+        }
+        else 
+        {
+            Debug.Log(createdTetrominoes.Count);
         }
     }
 
-    private void InstantiateTetromino()
+    public void InstantiateTetromino()
     {
         tetrominoes = tetrominoGenerator.GenerateRandomTetrominoes(3, tetrominoShapeList);
 
@@ -47,7 +53,6 @@ public class GameController : MonoBehaviour
 
             createdTetrominoes.Add(Instantiate(tetrominoShape, position, rotationZ, transform));
             createdTetrominoes[i].tag = tetrominoes[i].Tag;
-            //createdTetrominoes[i].transform.localScale = new Vector3(.5f, .5f, 1f);
         }
     }
 }

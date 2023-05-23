@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 2985666517944209348}
   - component: {fileID: 6567473100435812582}
   - component: {fileID: 8604157691082179411}
+  - component: {fileID: 5993195385263407457}
   - component: {fileID: 4732470126289153034}
   m_Layer: 5
   m_Name: Rod5x1
@@ -160,6 +161,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftBottomCornerBound: {fileID: 3608689436219303182}
   RightTopCornerBound: {fileID: 6088618633313000241}
+--- !u!50 &5993195385263407457
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004745051062950554}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &4732470126289153034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -167,7 +189,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6004745051062950554}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -184,7 +206,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 455, y: 75}
   m_EdgeRadius: 0
 --- !u!1 &6088618633313000241
 GameObject:

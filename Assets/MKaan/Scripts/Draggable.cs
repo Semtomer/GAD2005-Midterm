@@ -13,6 +13,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     Draggable draggable;
 
     Vector2 currentPosition;
+    Quaternion currentRotation;
 
     bool firstPick;
     public static bool InArea;
@@ -21,10 +22,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public static bool FilledSlot;
     bool FilledSlot2;
 
+    public static bool MakeItDisactive;
+
     public GameObject LeftBottomCornerBound;
     public GameObject RightTopCornerBound;
 
-    //List<GameObject> createdTetrominoes;
+    List<GameObject> createdTetrominoes;
+
+    //public Collider2D[] _collider;
+    //public Collider2D _collider;
+
     void Start()
     {
         ItemSlotsCollider = GameObject.FindWithTag("Canvas");
@@ -33,7 +40,18 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         currentPosition = transform.position;
 
-        //createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+        createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+
+        //_collider = GetComponent<Collider2D>();
+
+        //if () 
+        //{ 
+        
+        //}
+        //else 
+        //{
+        //    _collider.enabled = false;
+        //}*/
     }
 
     void ManuelDetector()
@@ -75,10 +93,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = false;
             FilledSlot2 = false;
         }
+
+        currentRotation = transform.rotation;
     }
-  
+
     public void OnBeginDrag(PointerEventData eventData)
     {
+        //_collider.enabled = true;
         firstPick = true;
         releasedTetromino = false;
         releasedtetromino2 = false;
@@ -88,8 +109,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         transform.position = Input.mousePosition;
     }
-
-    public static bool MakeItDisactive;
+ 
     public void OnEndDrag(PointerEventData eventData)
     {
         releasedTetromino = true;
@@ -98,12 +118,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         if(InArea == false || FilledSlot == true)
         {
-
             Destroy(gameObject,0.1f);
-            Instantiate(gameObject, currentPosition, Quaternion.identity,ItemSlotsCollider.transform);
+            createdTetrominoes.Remove(gameObject);
+            createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
         }
-        
-            
+                  
         if(InArea == true)
         {
             gameObject.tag = "Filled";
@@ -113,6 +132,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void OnTriggerStay2D(Collider2D collision)
     {
+
         if (collision.gameObject.tag == "Filled")
         {
             FilledSlot = true;
@@ -121,9 +141,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (collision.gameObject.tag == "Destroy")
         {
             Destroy(gameObject,0.25f);
-            //createdTetrominoes.Remove(transform.parent.gameObject);
+            createdTetrominoes.Remove(gameObject);
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Filled")
