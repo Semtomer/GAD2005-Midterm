@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 2985666517944209348}
   - component: {fileID: 6567473100435812582}
   - component: {fileID: 8604157691082179411}
+  - component: {fileID: 3349728985658157171}
+  - component: {fileID: 1056643918342510170}
   m_Layer: 5
   m_Name: Rod5x1
   m_TagString: Untagged
@@ -157,8 +159,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a400a2d3236a1148b3c35f0d1ae6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ItemSlotsCollider: {fileID: 0}
   LeftBottomCornerBound: {fileID: 3608689436219303182}
   RightTopCornerBound: {fileID: 6088618633313000241}
+--- !u!61 &3349728985658157171
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004745051062950554}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 455.4, y: 74.94}
+  m_EdgeRadius: 0
+--- !u!50 &1056643918342510170
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6004745051062950554}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6088618633313000241
 GameObject:
   m_ObjectHideFlags: 0
