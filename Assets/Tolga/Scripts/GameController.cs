@@ -6,11 +6,19 @@ public class GameController : MonoBehaviour
 {
     [HideInInspector] public Tetromino[] tetrominoes;
 
+    private ITetrominoGenerator tetrominoGenerator;
+
     [SerializeField] public GameObject[] tetrominoShapeList;
+
     [SerializeField] public RectTransform[] spawnList;
 
     [HideInInspector] public List<GameObject> createdTetrominoes;
-   
+
+    private void Start()
+    {
+        tetrominoGenerator = new TetrominoGenerator();
+    }
+
     private void Update()
     {
         if (createdTetrominoes.Count == 0)
@@ -21,7 +29,6 @@ public class GameController : MonoBehaviour
 
     private void InstantiateTetromino()
     {
-        ITetrominoGenerator tetrominoGenerator = new TetrominoGenerator();
         tetrominoes = tetrominoGenerator.GenerateRandomTetrominoes(3, tetrominoShapeList);
 
 

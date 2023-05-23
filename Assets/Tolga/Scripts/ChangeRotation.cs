@@ -5,14 +5,20 @@ using UnityEngine;
 public class ChangeRotation : MonoBehaviour
 {
     List<GameObject> createdTetrominoes;
+    private GameController gameController;
+
+    private void Start()
+    {
+        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+    }
 
     public void ChangeRotationCreatedTetrominoes()
     {
-        createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+        createdTetrominoes = gameController.createdTetrominoes;
 
-        for (int i = 0; i < createdTetrominoes.Count; i++) 
+        foreach (GameObject tetromino in createdTetrominoes)
         {
-            createdTetrominoes[i].GetComponent<RectTransform>().eulerAngles = new Vector3(0f, 0f, createdTetrominoes[i].GetComponent<RectTransform>().eulerAngles.z + 90);
-        }       
+            tetromino.GetComponent<RectTransform>().eulerAngles = new Vector3(0f, 0f, tetromino.GetComponent<RectTransform>().eulerAngles.z + 90);
+        }
     } 
 }
