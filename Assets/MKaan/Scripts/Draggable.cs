@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -27,8 +28,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     List<GameObject> createdTetrominoes;
 
-    public Collider2D[] _colliderList;
-    public GameObject[] Items;
+    Collider2D[] _colliderList;
 
     void Start()
     {
@@ -87,8 +87,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = false;
             FilledSlot2 = false;
         }
-
         currentRotation = transform.rotation;
+        
+
+        
     }
 
     public void OnBeginDrag(PointerEventData eventData)
