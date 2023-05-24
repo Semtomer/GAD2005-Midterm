@@ -87,10 +87,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = false;
             FilledSlot2 = false;
         }
-        currentRotation = transform.rotation;
-        
 
-        
+        currentRotation = transform.rotation;         
     }
 
     public void OnBeginDrag(PointerEventData eventData)

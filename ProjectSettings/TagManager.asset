@@ -12,6 +12,10 @@ TagManager:
   - Destroy
   - Filled
   - Slot
+  - ActionSound
+  - WinSound
+  - DeniedSound
+  - LoseSound
   layers:
   - Default
   - TransparentFX
