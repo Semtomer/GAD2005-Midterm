@@ -9,6 +9,8 @@ public class ItemsSlotted : MonoBehaviour
     List<GameObject> createdTetrominoes;
     TetrominoInstantiater tetrominoInstantiater;
 
+    bool runOnce = true;
+
     void Start()
     {
         _collider = GetComponent<Collider2D>();
@@ -29,8 +31,12 @@ public class ItemsSlotted : MonoBehaviour
 
                 createdTetrominoes.Remove(transform.parent.gameObject);
 
-                SpecialButton.hasClickedButton = true;
-                AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+                if (runOnce)
+                {
+                    SpecialButton.hasClickedButton = true;
+                    AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+                    runOnce = false;
+                }
             }
         }
         

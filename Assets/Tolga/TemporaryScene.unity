@@ -10723,7 +10723,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bfaf2fceb842f4b7f82b632bfeac1881, type: 3}
+  m_audioClip: {fileID: 8300000, guid: eb3eb2f7fb370704fbc74b16f72508b1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -11088,6 +11088,7 @@ GameObject:
   - component: {fileID: 1550121288}
   - component: {fileID: 1550121287}
   - component: {fileID: 1550121286}
+  - component: {fileID: 1550121291}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Canvas
@@ -11207,6 +11208,21 @@ MonoBehaviour:
   - {fileID: 2239022872946520104, guid: 0372e773ce314284e952c9f441b69410, type: 3}
   - {fileID: 2358218493552383696, guid: 8d9a2108f5947db4796f6801c7403093, type: 3}
   createdTetrominoes: []
+--- !u!114 &1550121291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550121285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a966ed45482aea2468da9575255f385d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1469333684}
+  garbageSprite: {fileID: 21300000, guid: 68e5a78013e33f247822a837e55b0ab4, type: 3}
 --- !u!224 &1565767126 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6873112188435758678, guid: d9d95e1242d04aa4a8135e753dcba342, type: 3}
