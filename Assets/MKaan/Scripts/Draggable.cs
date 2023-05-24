@@ -29,8 +29,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     List<GameObject> createdTetrominoes;
 
-    //public Collider2D[] _collider;
-    //public Collider2D _collider;
+    public Collider2D[] _colliderList;
 
     void Start()
     {
@@ -42,16 +41,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
 
-        //_collider = GetComponent<Collider2D>();
+        _colliderList = GetComponents<Collider2D>();
 
-        //if () 
-        //{ 
-        
-        //}
-        //else 
-        //{
-        //    _collider.enabled = false;
-        //}*/
+        foreach (var collider in _colliderList) 
+        {
+            collider.enabled = false; 
+        }
     }
 
     void ManuelDetector()
@@ -99,7 +94,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //_collider.enabled = true;
+        foreach (var collider in _colliderList)
+        {
+            collider.enabled = true;
+        }
+
         firstPick = true;
         releasedTetromino = false;
         releasedtetromino2 = false;
