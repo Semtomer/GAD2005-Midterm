@@ -22,7 +22,7 @@ public class Start_Page : MonoBehaviour
 
     public void Play_Button_Fuction()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("TemporaryScene");
     }
 
     public void SoundOn_Fuction()
