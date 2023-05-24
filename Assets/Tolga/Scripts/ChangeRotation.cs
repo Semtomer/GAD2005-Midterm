@@ -24,5 +24,7 @@ public class ChangeRotation : MonoBehaviour
 
         SpecialButton.hasClickedButton = true;
         SpecialButton.countOfActionsForButtons = 4;
+
+        AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
     } 
 }

@@ -14,7 +14,7 @@ public class ItemsSlotted : MonoBehaviour
         _collider = GetComponent<Collider2D>();
 
         gameController = GameObject.Find("Canvas").GetComponent<GameController>();
-        createdTetrominoes = gameController.createdTetrominoes;
+        createdTetrominoes = gameController.createdTetrominoes;      
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -27,6 +27,8 @@ public class ItemsSlotted : MonoBehaviour
             createdTetrominoes.Remove(transform.parent.gameObject);
 
             SpecialButton.hasClickedButton = true;
+
+            AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
         }
     }
 }

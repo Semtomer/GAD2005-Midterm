@@ -9,7 +9,7 @@ public class ChangeColor : MonoBehaviour
 
     private void Start()
     {
-        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+        gameController = GameObject.FindWithTag("Canvas").GetComponent<GameController>();
         tetrominoes = gameController.tetrominoes;
 
         for (int i = 0; i < tetrominoes.Length; i++)

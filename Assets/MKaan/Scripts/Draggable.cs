@@ -119,7 +119,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Destroy(gameObject,0.1f);
             createdTetrominoes.Remove(gameObject);
-            createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));          
+            createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
+            AudioManager.audioSourceForDeniedSound.PlayOneShot(AudioManager.deniedSound, .2f);
         }
                   
         if(InArea == true)
@@ -142,6 +143,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             SpecialButton.hasClickedButton = true;
             SpecialButton.countOfActionsForButtons = 4;
+
+            AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
         }
     }
 
