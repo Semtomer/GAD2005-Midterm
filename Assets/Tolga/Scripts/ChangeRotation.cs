@@ -5,20 +5,25 @@ using UnityEngine;
 public class ChangeRotation : MonoBehaviour
 {
     List<GameObject> createdTetrominoes;
-    private GameController gameController;
+    private TetrominoInstantiater tetrominoInstantiater;
 
     private void Start()
     {
-        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+        tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
     }
 
     public void ChangeRotationCreatedTetrominoes()
     {
-        createdTetrominoes = gameController.createdTetrominoes;
+        createdTetrominoes = tetrominoInstantiater.createdTetrominoes;
 
         foreach (GameObject tetromino in createdTetrominoes)
         {
             tetromino.GetComponent<RectTransform>().eulerAngles = new Vector3(0f, 0f, tetromino.GetComponent<RectTransform>().eulerAngles.z + 90);
         }
+
+        SpecialButton.hasClickedButton = true;
+        SpecialButton.countOfActionsForButtons = 4;
+
+        AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
     } 
 }

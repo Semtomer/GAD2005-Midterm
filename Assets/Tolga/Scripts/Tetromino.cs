@@ -1,4 +1,6 @@
 ﻿
+//Here are the common properties of the tetrominoes.
+
 using UnityEngine;
 
 public class Tetromino

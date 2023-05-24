@@ -5,16 +5,16 @@ using UnityEngine.UI;
 public class ChangeColor : MonoBehaviour
 {
     Tetromino[] tetrominoes;
-    private GameController gameController;
+    private TetrominoInstantiater tetrominoInstantiater;
 
     private void Start()
     {
-        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
-        tetrominoes = gameController.tetrominoes;
+        tetrominoInstantiater = GameObject.FindWithTag("Canvas").GetComponent<TetrominoInstantiater>();
+        tetrominoes = tetrominoInstantiater.tetrominoes;
 
         for (int i = 0; i < tetrominoes.Length; i++)
         {
-            if (transform.parent.tag == TetrominoGenerator.tags[i])
+            if (transform.parent.tag == tetrominoes[i].Tag) //
             {
                 GetComponent<Image>().color = tetrominoes[i].Color;
             }

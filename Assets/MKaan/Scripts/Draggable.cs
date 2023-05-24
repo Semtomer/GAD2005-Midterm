@@ -38,7 +38,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         currentPosition = transform.position;
 
-        createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+        createdTetrominoes = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>().createdTetrominoes;
 
         _colliderList = GetComponents<Collider2D>();
 
@@ -121,27 +121,31 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(gameObject,0.1f);
             createdTetrominoes.Remove(gameObject);
             createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
+            AudioManager.audioSourceForDeniedSound.PlayOneShot(AudioManager.deniedSound, .2f);
         }
                   
         if(InArea == true && FilledSlot == false)
         {
-            gameObject.tag = "Filled";
-        }
-        
+            gameObject.tag = "Filled";          
+        }     
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Filled")
         {
             FilledSlot = true;
             FilledSlot2 = true;
         }
-        if (collision.gameObject.tag == "Destroy")
+        if (collision.gameObject.tag == "Destroy") 
         {
             Destroy(gameObject,0.25f);
             createdTetrominoes.Remove(gameObject);
+
+            SpecialButton.hasClickedButton = true;
+            SpecialButton.countOfActionsForButtons = 4;
+
+            AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
         }
     }
 
