@@ -1,8 +1,5 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using System.Reflection;
-using Unity.Burst.CompilerServices;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class TenTilesComp : MonoBehaviour
@@ -33,9 +30,7 @@ public class TenTilesComp : MonoBehaviour
                 }
 
                 AudioManager.audioSourceForWinSound.PlayOneShot(AudioManager.winSound, .2f);
-            }
-            
-           
+            } 
         }
 
     }
@@ -45,7 +40,6 @@ public class TenTilesComp : MonoBehaviour
         if (collision.gameObject.tag == "Tiles")
         {
             Tiles.Add(collision.gameObject);
-            print("eklendi");
         }
     }
 
@@ -54,7 +48,6 @@ public class TenTilesComp : MonoBehaviour
         if (collision.gameObject.tag == "Tiles")
         {
             Tiles.Remove(collision.gameObject);
-            print("çýkarýldý");
         }
     }
 }
