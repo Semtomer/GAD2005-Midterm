@@ -24,26 +24,13 @@ public class GameController : MonoBehaviour
     {
         if (createdTetrominoes.Count == 0)
         {
-            Debug.Log(createdTetrominoes.Count);
             InstantiateTetromino();
-        }
-        else 
-        {
-            Debug.Log(createdTetrominoes.Count);
         }
     }
 
     public void InstantiateTetromino()
     {
         tetrominoes = tetrominoGenerator.GenerateRandomTetrominoes(3, tetrominoShapeList);
-
-
-        foreach (Tetromino tetromino in tetrominoes)
-        {
-            Debug.Log("Tetromino Type: " + tetromino.Shape.name);
-            Debug.Log("Tetromino Color: " + tetromino.Color);
-            Debug.Log("Tetromino Rotation Angle: " + tetromino.RotationAngle);
-        }
 
         for (int i = 0; i < tetrominoes.Length; i++)
         {

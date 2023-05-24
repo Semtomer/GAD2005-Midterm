@@ -25,6 +25,8 @@ public class ItemsSlotted : MonoBehaviour
             transform.position = collision.transform.position;
 
             createdTetrominoes.Remove(transform.parent.gameObject);
+
+            SpecialButton.hasClickedButton = true;
         }
     }
 }

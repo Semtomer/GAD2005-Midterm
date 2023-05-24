@@ -1,6 +1,7 @@
 ﻿
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeRotation : MonoBehaviour
 {
@@ -20,5 +21,8 @@ public class ChangeRotation : MonoBehaviour
         {
             tetromino.GetComponent<RectTransform>().eulerAngles = new Vector3(0f, 0f, tetromino.GetComponent<RectTransform>().eulerAngles.z + 90);
         }
+
+        SpecialButton.hasClickedButton = true;
+        SpecialButton.countOfActionsForButtons = 4;
     } 
 }

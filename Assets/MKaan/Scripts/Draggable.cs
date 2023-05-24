@@ -119,19 +119,17 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Destroy(gameObject,0.1f);
             createdTetrominoes.Remove(gameObject);
-            createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
+            createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));          
         }
                   
         if(InArea == true)
         {
-            gameObject.tag = "Filled";
-        }
-        
+            gameObject.tag = "Filled";          
+        }     
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-
         if (collision.gameObject.tag == "Filled")
         {
             FilledSlot = true;
@@ -141,6 +139,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             Destroy(gameObject,0.25f);
             createdTetrominoes.Remove(gameObject);
+
+            SpecialButton.hasClickedButton = true;
+            SpecialButton.countOfActionsForButtons = 4;
         }
     }
 
