@@ -8,7 +8,7 @@ public class ChangeRotation : MonoBehaviour
     private TetrominoInstantiater tetrominoInstantiater;
 
     private void Start()
-    {
+    {      
         tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
     }
 

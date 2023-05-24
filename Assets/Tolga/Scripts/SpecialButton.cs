@@ -10,7 +10,8 @@ public class SpecialButton : MonoBehaviour
     public static bool hasClickedButton = false;
 
     GameObject garbage;
-    [SerializeField] public Sprite garbageSprite;
+    [SerializeField] Sprite garbageSpriteOpen;
+    [SerializeField] Sprite garbageSpriteClosed;
 
     private void Start()
     {
@@ -28,7 +29,7 @@ public class SpecialButton : MonoBehaviour
                 button.interactable = true;
                 
                 garbage.GetComponent<BoxCollider2D>().enabled = true;
-                garbage.GetComponent<Image>().sprite = null;
+                garbage.GetComponent<Image>().sprite = garbageSpriteOpen;
             }
         }
         else
@@ -38,7 +39,7 @@ public class SpecialButton : MonoBehaviour
                 button.interactable = false;
                 
                 garbage.GetComponent<BoxCollider2D>().enabled = false;
-                garbage.GetComponent<Image>().sprite = garbageSprite;
+                garbage.GetComponent<Image>().sprite = garbageSpriteClosed;
             }
         }
 
