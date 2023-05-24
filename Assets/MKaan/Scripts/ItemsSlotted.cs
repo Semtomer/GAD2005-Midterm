@@ -18,7 +18,8 @@ public class ItemsSlotted : MonoBehaviour
         tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
         createdTetrominoes = tetrominoInstantiater.createdTetrominoes;
     }
-
+    // this code check the when we release the tile and is that in the slot area and not in a row when these alright make the normal tile positin equal to the slot position
+    // note: slots is square gray box on the playground
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Slot")

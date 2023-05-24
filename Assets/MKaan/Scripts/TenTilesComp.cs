@@ -16,11 +16,13 @@ public class TenTilesComp : MonoBehaviour
     public List<GameObject> Tiles = new List<GameObject>();
     void Update()
     {
+        //this is check the missing Object on the list
         for (var i = Tiles.Count - 1; i > -1; i--)
         {
             if (Tiles[i] == null)
                 Tiles.RemoveAt(i);
         }
+        //this is check when we release the Tiles and not release them in a row and when the line become 10 destroy all tiles on than line
         if(Draggable.releasedTetromino == true && Draggable.FilledSlot == false)
         {
             if(Tiles.Count >= 10)
@@ -37,7 +39,7 @@ public class TenTilesComp : MonoBehaviour
         }
 
     }
-
+    // These triggers check the individual Tiles one by one and add them to the list 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Tiles")

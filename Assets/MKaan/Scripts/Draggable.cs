@@ -35,7 +35,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         ItemSlotsCollider = GameObject.FindWithTag("Canvas");
 
         draggable = GetComponent<Draggable>();
-
+        //when it is respawn in check the last position and spawn it same
         currentPosition = transform.position;
 
         createdTetrominoes = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>().createdTetrominoes;
@@ -47,7 +47,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             collider.enabled = false; 
         }
     }
-
+    //this method check the player Area
     void ManuelDetector()
     {
         if(LeftBottomCornerBound == null || RightTopCornerBound == null)
@@ -77,6 +77,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if(firstPick == true)
             ManuelDetector();
 
+        //whne player put the tile on slot that tile is unable to drag again
         if(releasedtetromino2 == true && InArea2 == true && FilledSlot == false)
         {
             draggable.enabled = false;
@@ -87,10 +88,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = false;
             FilledSlot2 = false;
         }
-
+        //when it is respawn in check the last rotation and spawn it same
         currentRotation = transform.rotation;         
     }
-
+    //this event supply when player start to dragging
     public void OnBeginDrag(PointerEventData eventData)
     {
         foreach (var collider in _colliderList)
@@ -102,18 +103,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         releasedTetromino = false;
         releasedtetromino2 = false;
     }
-
+    //this event supply when player continue to dragging
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = Input.mousePosition;
     }
- 
+
+    //this event supply when player release to dragging
     public void OnEndDrag(PointerEventData eventData)
     {
         releasedTetromino = true;
         releasedtetromino2 = true;
         firstPick = false;
-
+        //check is this in area or not in a row with Tiles 
         if(InArea == false || FilledSlot == true)
         {
             Destroy(gameObject,0.1f);
@@ -121,13 +123,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
             AudioManager.audioSourceForDeniedSound.PlayOneShot(AudioManager.deniedSound, .2f);
         }
-                  
-        if(InArea == true && FilledSlot == false)
+        //check is this in area and not in a row with Tiles           
+        if (InArea == true && FilledSlot == false)
         {
             gameObject.tag = "Filled";          
         }     
     }
 
+    //deal of here is when trigger detect the Filled tagged object it say that Slot is filled so that is the mean of "FilledSlot"
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Filled")
@@ -135,6 +138,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = true;
             FilledSlot2 = true;
         }
+        //this is the trash box when drag on it
         if (collision.gameObject.tag == "Destroy") 
         {
             Destroy(gameObject,0.25f);
