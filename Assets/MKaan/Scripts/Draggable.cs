@@ -39,7 +39,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         currentPosition = transform.position;
 
-        createdTetrominoes = GameObject.Find("Canvas").GetComponent<GameController>().createdTetrominoes;
+        createdTetrominoes = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>().createdTetrominoes;
 
         _colliderList = GetComponents<Collider2D>();
 
@@ -136,7 +136,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             FilledSlot = true;
             FilledSlot2 = true;
         }
-        if (collision.gameObject.tag == "Destroy")
+        if (collision.gameObject.tag == "Destroy") 
         {
             Destroy(gameObject,0.25f);
             createdTetrominoes.Remove(gameObject);

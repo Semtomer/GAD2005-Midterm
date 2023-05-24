@@ -1,6 +1,8 @@
 ﻿
+//Here the tetromino types are sorted by enumeration.
+
 public enum TetrominoType
-{
+{   
     LShaped2x1 = 0,
     LShaped3x2 = 1,
     Rod2x1 = 2,

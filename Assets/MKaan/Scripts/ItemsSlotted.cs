@@ -7,17 +7,17 @@ public class ItemsSlotted : MonoBehaviour
     Collider2D _collider;
 
     List<GameObject> createdTetrominoes;
-    GameController gameController;
+    TetrominoInstantiater gameController;
 
     void Start()
     {
         _collider = GetComponent<Collider2D>();
 
-        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+        gameController = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
         createdTetrominoes = gameController.createdTetrominoes;      
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision) 
     {
         if (Draggable.releasedTetromino == true && Draggable.InArea == true && Draggable.FilledSlot == false)
         {

@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GameController : MonoBehaviour
+public class TetrominoInstantiater : MonoBehaviour
 {
     [HideInInspector] public Tetromino[] tetrominoes;
 
@@ -16,19 +16,21 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        //If the tetromino generator service changes, the interface helps us with this code. 
         tetrominoGenerator = new TetrominoGenerator();
-        InstantiateTetromino();
+        InstantiateTetrominoes();
     }
 
     private void Update()
     {
+        //
         if (createdTetrominoes.Count == 0)
         {
-            InstantiateTetromino();
+            InstantiateTetrominoes();
         }
     }
 
-    public void InstantiateTetromino()
+    private void InstantiateTetrominoes()
     {
         tetrominoes = tetrominoGenerator.GenerateRandomTetrominoes(3, tetrominoShapeList);
 

@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class TetrominoGenerator : ITetrominoGenerator
 {
-    public static string[] tags = new string[] { "first", "second", "third"};
+    //The tags of the tetrominoes that will be created are located here.
+    string[] tags = new string[] { "first", "second", "third"};
 
+    //Creates Tetromino objects and assigns properties to the created objects with the other methods. Returns the generated Tetromino objects.
     public Tetromino[] GenerateRandomTetrominoes(int count, GameObject[] tetrominoShapeList)
     {
         Tetromino[] tetrominoes = new Tetromino[count];

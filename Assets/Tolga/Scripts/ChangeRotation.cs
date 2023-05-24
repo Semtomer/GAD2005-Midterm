@@ -1,21 +1,20 @@
 ﻿
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ChangeRotation : MonoBehaviour
 {
     List<GameObject> createdTetrominoes;
-    private GameController gameController;
+    private TetrominoInstantiater tetrominoInstantiater;
 
     private void Start()
     {
-        gameController = GameObject.Find("Canvas").GetComponent<GameController>();
+        tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
     }
 
     public void ChangeRotationCreatedTetrominoes()
     {
-        createdTetrominoes = gameController.createdTetrominoes;
+        createdTetrominoes = tetrominoInstantiater.createdTetrominoes;
 
         foreach (GameObject tetromino in createdTetrominoes)
         {

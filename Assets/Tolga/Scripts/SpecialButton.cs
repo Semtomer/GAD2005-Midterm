@@ -1,5 +1,4 @@
 ﻿
-using Microsoft.Cci;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,6 +36,7 @@ public class SpecialButton : MonoBehaviour
             foreach (Button button in buttons)
             {
                 button.interactable = false;
+                
                 garbage.GetComponent<BoxCollider2D>().enabled = false;
                 garbage.GetComponent<Image>().sprite = garbageSprite;
             }
