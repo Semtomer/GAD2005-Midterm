@@ -11,6 +11,7 @@ TagManager:
   - Canvas
   - Destroy
   - Filled
+  - Slot
   layers:
   - Default
   - TransparentFX

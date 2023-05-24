@@ -160,6 +160,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftBottomCornerBound: {fileID: 1661711798567914282}
   RightTopCornerBound: {fileID: 7766850922470022539}
+  _colliderList: []
+  Items: []
 --- !u!50 &4207945510894583789
 Rigidbody2D:
   serializedVersion: 4

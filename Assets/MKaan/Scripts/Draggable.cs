@@ -22,14 +22,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public static bool FilledSlot;
     bool FilledSlot2;
 
-    public static bool MakeItDisactive;
-
     public GameObject LeftBottomCornerBound;
     public GameObject RightTopCornerBound;
 
     List<GameObject> createdTetrominoes;
 
     public Collider2D[] _colliderList;
+    public GameObject[] Items;
 
     void Start()
     {
@@ -122,7 +121,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
         }
                   
-        if(InArea == true)
+        if(InArea == true && FilledSlot == false)
         {
             gameObject.tag = "Filled";
         }

@@ -19,12 +19,17 @@ public class ItemsSlotted : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Draggable.releasedTetromino == true && Draggable.InArea == true && Draggable.FilledSlot == false)
+        if(collision.gameObject.tag == "Slot")
         {
-            _collider.enabled = false;
-            transform.position = collision.transform.position;
+            if (Draggable.releasedTetromino == true && Draggable.InArea == true && Draggable.FilledSlot == false)
+            {
+                gameObject.tag = "Tiles";
+                //_collider.enabled = false;
+                transform.position = collision.transform.position;
 
-            createdTetrominoes.Remove(transform.parent.gameObject);
+                createdTetrominoes.Remove(transform.parent.gameObject);
+            }
         }
+        
     }
 }
