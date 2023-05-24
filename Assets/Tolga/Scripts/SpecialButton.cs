@@ -1,10 +1,14 @@
 ﻿
+//This class is added to the Canvas.
+//Limits the mechanics of two buttons and a garbage can to the count of successful actions.
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SpecialButton : MonoBehaviour 
 {
+    //Here the necessary variables for buttons and constraints are defined.
     public List<Button> buttons;
     public static int countOfActionsForButtons = 0;
     public static bool hasClickedButton = false;
@@ -15,13 +19,13 @@ public class SpecialButton : MonoBehaviour
 
     private void Start()
     {
+        //Reaches the garbage object.
         garbage = GameObject.FindWithTag("Destroy");
     }
 
     private void Update()
     {
-        Debug.Log(countOfActionsForButtons);
-        
+        //If the count of successful actions to be made is 0, the buttons and the garbage can become active. Otherwise they are inactive.
         if (countOfActionsForButtons == 0) 
         {
             foreach (Button button in buttons)
@@ -43,6 +47,7 @@ public class SpecialButton : MonoBehaviour
             }
         }
 
+        //As successful actions are made, the count of successful actions required is reduced.
         if (countOfActionsForButtons != 0 && hasClickedButton == true)
         {
             countOfActionsForButtons--;
