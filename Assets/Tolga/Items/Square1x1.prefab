@@ -85,6 +85,7 @@ GameObject:
   - component: {fileID: 7163255559123217814}
   - component: {fileID: 7163255559123217813}
   - component: {fileID: 7163255559123217812}
+  - component: {fileID: 2246046621202027491}
   - component: {fileID: 1729208258698494557}
   - component: {fileID: 4324796484324735880}
   m_Layer: 5
@@ -193,6 +194,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftBottomCornerBound: {fileID: 6043694675271747357}
   RightTopCornerBound: {fileID: 1384234287658267220}
+--- !u!114 &2246046621202027491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7163255559123217770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca137074beb61c468c3397f2d2b98be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colliderList: []
+  Items:
+  - {fileID: 4167780563032011439}
 --- !u!50 &1729208258698494557
 Rigidbody2D:
   serializedVersion: 4
@@ -340,5 +356,10 @@ PrefabInstance:
 --- !u!224 &4167780563032011438 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6538682045185450843, guid: a8924d2690427ee4fb66b935dfd9d157, type: 3}
+  m_PrefabInstance: {fileID: 7163255557628629493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4167780563032011439 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6538682045185450842, guid: a8924d2690427ee4fb66b935dfd9d157, type: 3}
   m_PrefabInstance: {fileID: 7163255557628629493}
   m_PrefabAsset: {fileID: 0}
