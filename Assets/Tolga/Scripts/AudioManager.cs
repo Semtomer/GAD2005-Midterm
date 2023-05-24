@@ -1,17 +1,19 @@
 ﻿
+//Sounds to be added to the mechanics are defined here. The play of the sounds is within their mechanical code.
+
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
-{
-    [SerializeField] public static AudioSource audioSourceForActionSound,
-                                               audioSourceForWinSound,
-                                               audioSourceForDeniedSound,
-                                               audioSourceForLoseSound;
+{   
+    public static AudioSource audioSourceForActionSound,
+                              audioSourceForWinSound,
+                              audioSourceForDeniedSound,
+                              audioSourceForLoseSound;
 
-    [SerializeField] public static AudioClip actionSound,
-                                             winSound,
-                                             deniedSound,
-                                             loseSound;
+    public static AudioClip actionSound,
+                            winSound,
+                            deniedSound,
+                            loseSound;
 
     private void Start()
     {
