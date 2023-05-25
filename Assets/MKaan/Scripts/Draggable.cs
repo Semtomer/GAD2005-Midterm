@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(ScoreManager))]
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+
+    public ScoreManager scoreManager;
+
     [HideInInspector] public static bool releasedTetromino = false;
     bool releasedtetromino2 = false;
 
@@ -31,6 +35,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     void Start()
     {
+        scoreManager = GetComponent<ScoreManager>();
+
         ItemSlotsCollider = GameObject.FindWithTag("Canvas");
 
         draggable = GetComponent<Draggable>();
@@ -125,7 +131,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //check is this in area and not in a row with Tiles           
         if (InArea == true && FilledSlot == false)
         {
-            gameObject.tag = "Filled";          
+            gameObject.tag = "Filled";
+            Debug.Log("Object Name: " + gameObject.name);
+            int lastScore = scoreManager.MultiplyNumbersInName(gameObject.name);
+            scoreManager.IncreaseScore(lastScore);
+
         }     
     }
 

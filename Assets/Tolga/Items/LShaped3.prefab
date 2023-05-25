@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 7096579037818684402}
   - component: {fileID: 6662133354499045006}
   m_Layer: 5
-  m_Name: LShaped2x1
+  m_Name: LShaped3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
