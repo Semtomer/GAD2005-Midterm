@@ -7,17 +7,12 @@ using UnityEngine.UI;
 public class Start_Page : MonoBehaviour
 {
     public GameObject SoundOn,SoundOff;
-    bool SoundMusicBool = true;
+    public static bool SoundMusicBool = true;
 
     void Start()
     {
         SoundOn.SetActive(true);
         SoundOff.SetActive(false);
-    }
-
-    void Update()
-    {
-        
     }
 
     public void Play_Button_Fuction()
