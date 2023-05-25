@@ -64,7 +64,6 @@ public class ControlSettings : MonoBehaviour
     {
         PausePopUpAnim.SetTrigger("ClosePopUpAnim");
         StartCoroutine("WaitPopUpAnim");
-     
     }
 
     IEnumerator WaitPopUpAnim()
