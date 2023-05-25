@@ -47,7 +47,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         //when it is respawn in check the last position and spawn it same
         currentPosition = transform.position;
 
-        createdTetrominoes = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>().createdTetrominoes;
+        createdTetrominoes = GameObject.FindWithTag("InstantiaterParent").GetComponent<TetrominoInstantiater>().createdTetrominoes;
 
         _colliderList = GetComponents<Collider2D>();
 
@@ -62,14 +62,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if(LeftBottomCornerBound == null || RightTopCornerBound == null)
             return;
 
-        if (LeftBottomCornerBound.transform.position.x > 170 
-            && LeftBottomCornerBound.transform.position.x < 1015 
-            && LeftBottomCornerBound.transform.position.y > 120 
-            && LeftBottomCornerBound.transform.position.y < 960 
-            && RightTopCornerBound.transform.position.x > 170 
-            && RightTopCornerBound.transform.position.x < 1015 
-            && RightTopCornerBound.transform.position.y > 120 
-            && RightTopCornerBound.transform.position.y < 960)
+        if (LeftBottomCornerBound.transform.position.x > 160 
+            && LeftBottomCornerBound.transform.position.x < 1025 
+            && LeftBottomCornerBound.transform.position.y > 110 
+            && LeftBottomCornerBound.transform.position.y < 970 
+            && RightTopCornerBound.transform.position.x > 160
+            && RightTopCornerBound.transform.position.x < 1025
+            && RightTopCornerBound.transform.position.y > 110
+            && RightTopCornerBound.transform.position.y < 970)
         {
             InArea = true;
             InArea2 = true;
@@ -86,7 +86,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if(firstPick == true)
             ManuelDetector();
 
-        //whne player put the tile on slot that tile is unable to drag again
+        //when player put the tile on slot that tile is unable to drag again
         if(releasedtetromino2 == true && InArea2 == true && FilledSlot == false)
         {
             draggable.enabled = false;
@@ -130,7 +130,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             Destroy(gameObject,0.1f);
             createdTetrominoes.Remove(gameObject);
             createdTetrominoes.Add(Instantiate(gameObject, currentPosition, currentRotation, ItemSlotsCollider.transform));
-            AudioManager.audioSourceForDeniedSound.PlayOneShot(AudioManager.deniedSound, .2f);
+
+            if (Start_Page.SoundMusicBool == true)
+            {
+                AudioManager.audioSourceForDeniedSound.PlayOneShot(AudioManager.deniedSound, .2f);
+            }       
         }
         //check is this in area and not in a row with Tiles           
         if (InArea == true && FilledSlot == false)
@@ -176,7 +180,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             SpecialButton.hasClickedButton = true;
             SpecialButton.countOfActionsForButtons = 4;
 
-            AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+            if (Start_Page.SoundMusicBool == true)
+            {
+                AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+            }
         }
     }
 

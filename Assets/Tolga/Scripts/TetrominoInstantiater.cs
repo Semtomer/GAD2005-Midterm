@@ -28,6 +28,7 @@ public class TetrominoInstantiater : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(createdTetrominoes.Count);
         //The count of tetrominoes in the scene decreases as you make a successful actions or tetrominoes are thrown into the garbage.
         //When it is 0, it creates new ones.
         if (createdTetrominoes.Count == 0)

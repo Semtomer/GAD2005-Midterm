@@ -10,7 +10,7 @@ public class ChangeRotation : MonoBehaviour
 
     private void Start()
     {      
-        tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
+        tetrominoInstantiater = GameObject.FindWithTag("InstantiaterParent").GetComponent<TetrominoInstantiater>();
     }
 
     //This method is run on the change rotation button.
@@ -30,6 +30,10 @@ public class ChangeRotation : MonoBehaviour
         SpecialButton.countOfActionsForButtons = 4;
 
         //Plays the action sound.
-        AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+        if (Start_Page.SoundMusicBool == true)
+        {
+            AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+        }
+       
     } 
 }

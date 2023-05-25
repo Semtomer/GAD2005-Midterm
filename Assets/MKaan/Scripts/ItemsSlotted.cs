@@ -15,7 +15,7 @@ public class ItemsSlotted : MonoBehaviour
     {
         _collider = GetComponent<Collider2D>();
 
-        tetrominoInstantiater = GameObject.Find("Canvas").GetComponent<TetrominoInstantiater>();
+        tetrominoInstantiater = GameObject.FindWithTag("InstantiaterParent").GetComponent<TetrominoInstantiater>();
         createdTetrominoes = tetrominoInstantiater.createdTetrominoes;
     }
     // this code check the when we release the tile and is that in the slot area and not in a row when these alright make the normal tile positin equal to the slot position
@@ -35,7 +35,12 @@ public class ItemsSlotted : MonoBehaviour
                 if (runOnce)
                 {
                     SpecialButton.hasClickedButton = true;
-                    AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+
+                    if (Start_Page.SoundMusicBool == true)
+                    {
+                        AudioManager.audioSourceForActionSound.PlayOneShot(AudioManager.actionSound, .2f);
+                    } 
+
                     runOnce = false;
                 }
             }

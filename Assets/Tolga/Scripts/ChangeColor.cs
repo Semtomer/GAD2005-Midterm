@@ -12,7 +12,7 @@ public class ChangeColor : MonoBehaviour
     private void Start()
     {
         //Reaching the created tetromino list.
-        tetrominoInstantiater = GameObject.FindWithTag("Canvas").GetComponent<TetrominoInstantiater>();
+        tetrominoInstantiater = GameObject.FindWithTag("InstantiaterParent").GetComponent<TetrominoInstantiater>();
         tetrominoes = tetrominoInstantiater.tetrominoes;
 
         for (int i = 0; i < tetrominoes.Length; i++)
