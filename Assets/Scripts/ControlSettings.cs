@@ -8,6 +8,7 @@ public class ControlSettings : MonoBehaviour
 {
     public GameObject PauseButton, PausePopUp, GameOverPopUp, SoundOn, SoundOff;
     public Animator PausePopUpAnim, GameOverPopUpAnim;
+    public AudioSource GamePlaySound, LostSound;
 
     void Start()
     {
@@ -22,11 +23,11 @@ public class ControlSettings : MonoBehaviour
 
         if (Start_Page.SoundMusicBool == true)
         {
-            //tolga ya sorulacak
+            SoundOff_Fuction();
         }
         else if (Start_Page.SoundMusicBool == false)
         {
-            //tolga ya sorulacak
+            SoundOn_Fuction();
         }
     }
 
@@ -50,14 +51,16 @@ public class ControlSettings : MonoBehaviour
     {
         SoundOn.SetActive(false);
         SoundOff.SetActive(true);
-        //SoundMusicBool = false;
+        Start_Page.SoundMusicBool = false;
+        GamePlaySound.Stop();
     }
 
     public void SoundOff_Fuction()
     {
         SoundOn.SetActive(true);
         SoundOff.SetActive(false);
-        //SoundMusicBool = true;
+        Start_Page.SoundMusicBool = true;
+        GamePlaySound.Play();
     }
 
     public void Play_Game_Fuction()
@@ -71,5 +74,12 @@ public class ControlSettings : MonoBehaviour
         yield return new WaitForSeconds(3);
         PauseButton.SetActive(true);
         PausePopUp.SetActive(false);
+    }
+
+    public void Game_Over_Fuction()
+    {
+        GameOverPopUp.SetActive(true);
+        GamePlaySound.Stop();
+        LostSound.Play();
     }
 }
