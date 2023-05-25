@@ -6,23 +6,62 @@ using System.Text.RegularExpressions;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText; // UI Text object to display the score
+    private int currentScore;
+    private int highScore;
 
-    private int score = 0; // Score variable
+    private const string HighScoreKey = "HighScore";
 
-    // Method to increase the score
-    public void IncreaseScore(int amount)
+    void Start()
     {
-        score += amount;
-        Debug.Log("score: " + score);
+        // Get the high score from PlayerPrefs
+        highScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+
+        // Get the current score from PlayerPrefs
+        currentScore = PlayerPrefs.GetInt("CurrentScore", 0);
     }
 
-    // Method to decrease the score
+    // Increase the score
+    public void IncreaseScore(int amount)
+    {
+        // Save the last score to PlayerPrefs
+        PlayerPrefs.SetInt("LastScore", amount);
+        PlayerPrefs.Save();
+
+        // Get the current score from PlayerPrefs
+        currentScore = PlayerPrefs.GetInt("CurrentScore", 0);
+
+        currentScore += amount;
+
+        // Check and update the high score
+        if (currentScore > highScore)
+        {
+            highScore = currentScore;
+
+            // Save the new high score to PlayerPrefs
+            PlayerPrefs.SetInt(HighScoreKey, highScore);
+            PlayerPrefs.Save();
+        }
+
+        // Save the current score to PlayerPrefs
+        PlayerPrefs.SetInt("CurrentScore", currentScore);
+        PlayerPrefs.Save();
+        Debug.Log("score: " + currentScore);
+    }
+
+    // Decrease the score
     public void DecreaseScore(int amount)
     {
-        score -= amount;
-        if (score < 0)
-            score = 0;
+        currentScore -= amount;
+
+        // Ensure the score doesn't go below zero
+        if (currentScore < 0)
+        {
+            currentScore = 0;
+        }
+
+        // Save the current score to PlayerPrefs
+        PlayerPrefs.SetInt("CurrentScore", currentScore);
+        PlayerPrefs.Save();
     }
 
 
@@ -47,5 +86,21 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Multiplication Result: " + result);
 
         return result;
+    }
+
+    // Reset the score
+    public void ResetScore()
+    {
+        currentScore = 0;
+
+        // Reset the current score in PlayerPrefs
+        PlayerPrefs.SetInt("CurrentScore", currentScore);
+        PlayerPrefs.Save();
+    }
+
+    // Get the high score
+    public int GetHighScore()
+    {
+        return highScore;
     }
 }
