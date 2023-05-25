@@ -6,6 +6,8 @@ using System.Text.RegularExpressions;
 
 public class ScoreManager : MonoBehaviour
 {
+
+    public Text currentScoreStr;
     private int currentScore;
     private int highScore;
 
@@ -46,6 +48,7 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
         Debug.Log("score: " + currentScore);
+        scoreToInt();
     }
 
     // Decrease the score
@@ -62,8 +65,13 @@ public class ScoreManager : MonoBehaviour
         // Save the current score to PlayerPrefs
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
+        scoreToInt();
     }
 
+    void scoreToInt()
+    {
+        currentScoreStr.text= "" + currentScore;
+    }
 
 
     public int MultiplyNumbersInName(string objectName)
@@ -96,6 +104,7 @@ public class ScoreManager : MonoBehaviour
         // Reset the current score in PlayerPrefs
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
+        scoreToInt();
     }
 
     // Get the high score
