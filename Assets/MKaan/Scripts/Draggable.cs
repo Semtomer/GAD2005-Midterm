@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
+    public GameObject myGameObject;
+
     public ScoreManager scoreManager;
     //ScoreManager scoreManager = new ScoreManager();
 
@@ -138,6 +140,21 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             string objectName = gameObject.name;
             int lastScore = scoreManager.MultiplyNumbersInName(objectName);
             scoreManager.IncreaseScore(lastScore);
+
+            // Create an instance of the GameObjectSaveLoad class
+
+            GameObjectSaveLoad gameObjectSaveLoad = new GameObjectSaveLoad();
+
+            // Save a GameObject
+            GameObject objectToSave = gameObject;
+            if (objectToSave != null)
+            {
+                gameObjectSaveLoad.SaveGameObject(objectToSave);
+            }
+            else
+            {
+                Debug.LogWarning("Failed to find the object to save.");
+            }
 
         }     
     }

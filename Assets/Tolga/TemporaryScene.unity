@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 65847522}
   - component: {fileID: 65847521}
   - component: {fileID: 65847520}
-  - component: {fileID: 65847519}
+  - component: {fileID: 65847523}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -618,18 +618,6 @@ RectTransform:
   m_AnchoredPosition: {x: -463, y: -476.63}
   m_SizeDelta: {x: 116.82, y: 100.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &65847519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65847517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47a294bab01fa9e408c26f9f3ef2df61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &65847520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -673,7 +661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 65847521}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 65847523}
+        m_TargetAssemblyTypeName: Undo, Assembly-CSharp
+        m_MethodName: back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &65847521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -712,6 +712,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65847517}
   m_CullTransparentMesh: 1
+--- !u!114 &65847523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65847517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc36b7611cc3424aa5dbf03d2e4587d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &104314819 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6873112188435758678, guid: d9d95e1242d04aa4a8135e753dcba342, type: 3}
