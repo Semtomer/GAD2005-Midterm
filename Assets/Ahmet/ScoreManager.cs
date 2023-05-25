@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using TMPro;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
 
-    public Text currentScoreStr;
+    public TMP_Text currentScoreStr;
     private int currentScore;
     private int highScore;
 
