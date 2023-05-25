@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using TMPro;
 
@@ -10,7 +9,6 @@ public class ScoreUpdater : MonoBehaviour
     void Start()
     {
         UpdateScoreText();
-        ResetScore();
     }
 
     void Update()

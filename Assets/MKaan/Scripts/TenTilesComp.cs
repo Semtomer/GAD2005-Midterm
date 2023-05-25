@@ -5,6 +5,7 @@ using UnityEngine;
 public class TenTilesComp : MonoBehaviour
 {
     Collider2D _collider;
+
     void Start()
     {
         _collider = GetComponent<Collider2D>();
@@ -19,6 +20,7 @@ public class TenTilesComp : MonoBehaviour
             if (Tiles[i] == null)
                 Tiles.RemoveAt(i);
         }
+
         //this is check when we release the Tiles and not release them in a row and when the line become 10 destroy all tiles on than line
         if(Draggable.releasedTetromino == true && Draggable.FilledSlot == false)
         {
@@ -27,7 +29,6 @@ public class TenTilesComp : MonoBehaviour
                 for (var i = Tiles.Count - 1; i > -1; i--)
                 {
                     Destroy(Tiles[i]);
-                    //Debug.Log(Tiles[i].name);
                 }
 
                 if (Start_Page.SoundMusicBool == true)
@@ -38,6 +39,7 @@ public class TenTilesComp : MonoBehaviour
         }
 
     }
+
     // These triggers check the individual Tiles one by one and add them to the list 
     private void OnTriggerEnter2D(Collider2D collision)
     {

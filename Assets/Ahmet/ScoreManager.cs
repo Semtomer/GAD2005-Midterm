@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.UI;
 using System.Text.RegularExpressions;
-using TMPro;
-using System;
 
 public class ScoreManager : MonoBehaviour
 {
-
-    //public TMP_Text currentScoreStr;
     private int currentScore;
     private int highScore;
 
@@ -52,7 +46,6 @@ public class ScoreManager : MonoBehaviour
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
         Debug.Log("score: " + currentScore);
-        scoreToInt();
     }
 
     // Decrease the score
@@ -69,15 +62,7 @@ public class ScoreManager : MonoBehaviour
         // Save the current score to PlayerPrefs
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
-        scoreToInt();
     }
-
-    void scoreToInt()
-    {
-      //  Debug.Log("" + PlayerPrefs.GetInt("CurrentScore"));
-      // currentScoreStr.text= "" + PlayerPrefs.GetInt("CurrentScore");
-    }
-
 
     public int MultiplyNumbersInName(string objectName)
     {
@@ -90,6 +75,7 @@ public class ScoreManager : MonoBehaviour
         foreach (Match match in matches)
         {
             int number;
+
             if (int.TryParse(match.Value, out number))
             {
                 result *= number;
@@ -109,7 +95,6 @@ public class ScoreManager : MonoBehaviour
         // Reset the current score in PlayerPrefs
         PlayerPrefs.SetInt("CurrentScore", currentScore);
         PlayerPrefs.Save();
-        scoreToInt();
     }
 
     // Get the high score

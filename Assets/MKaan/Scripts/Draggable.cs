@@ -11,7 +11,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public GameObject myGameObject;
 
     public ScoreManager scoreManager;
-    //ScoreManager scoreManager = new ScoreManager();
 
     [HideInInspector] public static bool releasedTetromino = false;
     bool releasedtetromino2 = false;
@@ -41,7 +40,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         scoreManager = GetComponent<ScoreManager>();
 
-        ItemSlotsCollider = GameObject.FindWithTag("Canvas");
+        ItemSlotsCollider = GameObject.FindWithTag("InstantiaterParent");
 
         draggable = GetComponent<Draggable>();
         //when it is respawn in check the last position and spawn it same

@@ -27,7 +27,6 @@ public class ItemsSlotted : MonoBehaviour
             if (Draggable.releasedTetromino == true && Draggable.InArea == true && Draggable.FilledSlot == false)
             {
                 gameObject.tag = "Tiles";
-                //_collider.enabled = false;
                 transform.position = collision.transform.position;
 
                 createdTetrominoes.Remove(transform.parent.gameObject);
@@ -44,7 +43,6 @@ public class ItemsSlotted : MonoBehaviour
                     runOnce = false;
                 }
             }
-        }
-        
+        }   
     }
 }
