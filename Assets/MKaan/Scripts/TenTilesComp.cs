@@ -26,7 +26,8 @@ public class TenTilesComp : MonoBehaviour
             {
                 for (var i = Tiles.Count - 1; i > -1; i--)
                 {
-                    Destroy(Tiles[i]); 
+                    Destroy(Tiles[i]);
+                    Debug.Log(Tiles[i].name);
                 }
 
                 AudioManager.audioSourceForWinSound.PlayOneShot(AudioManager.winSound, .2f);
