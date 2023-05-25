@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 2599831049871473304}
   - component: {fileID: 785013510659027247}
   - component: {fileID: 6817171079408506349}
+  - component: {fileID: 2510685477045378537}
   m_Layer: 5
   m_Name: Square3x3
   m_TagString: third
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a400a2d3236a1148b3c35f0d1ae6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
   LeftBottomCornerBound: {fileID: 2544457794775659212}
   RightTopCornerBound: {fileID: 3659904522581001858}
 --- !u!114 &972924983884769668
@@ -416,6 +418,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 75, y: 75}
   m_EdgeRadius: 0
+--- !u!114 &2510685477045378537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855634916815086426}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216cac50eb1232a4784206477ca39df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreStr: {fileID: 0}
 --- !u!1 &2544457794775659212
 GameObject:
   m_ObjectHideFlags: 0

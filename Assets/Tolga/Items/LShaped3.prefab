@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 4681656839544810091}
   - component: {fileID: 7096579037818684402}
   - component: {fileID: 6662133354499045006}
+  - component: {fileID: 3960396966690955782}
   m_Layer: 5
   m_Name: LShaped3
   m_TagString: Untagged
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a400a2d3236a1148b3c35f0d1ae6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
   LeftBottomCornerBound: {fileID: 1661711798567914282}
   RightTopCornerBound: {fileID: 7766850922470022539}
 --- !u!114 &6654312131209708874
@@ -278,6 +280,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 75, y: 75}
   m_EdgeRadius: 0
+--- !u!114 &3960396966690955782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6134201201713690510}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216cac50eb1232a4784206477ca39df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreStr: {fileID: 0}
 --- !u!1 &7766850922470022539
 GameObject:
   m_ObjectHideFlags: 0

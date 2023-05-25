@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(ScoreManager))]
+
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
     public ScoreManager scoreManager;
+    //ScoreManager scoreManager = new ScoreManager();
 
     [HideInInspector] public static bool releasedTetromino = false;
     bool releasedtetromino2 = false;
@@ -133,7 +135,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         {
             gameObject.tag = "Filled";
             Debug.Log("Object Name: " + gameObject.name);
-            int lastScore = scoreManager.MultiplyNumbersInName(gameObject.name);
+            string objectName = gameObject.name;
+            int lastScore = scoreManager.MultiplyNumbersInName(objectName);
             scoreManager.IncreaseScore(lastScore);
 
         }     

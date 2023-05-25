@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 7134476421743396906}
   - component: {fileID: 8218808259936806661}
   - component: {fileID: 1997404142714208049}
+  - component: {fileID: 7727775980107100125}
   m_Layer: 5
   m_Name: Rod4x1
   m_TagString: second
@@ -198,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a400a2d3236a1148b3c35f0d1ae6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
   LeftBottomCornerBound: {fileID: 4720398692211739239}
   RightTopCornerBound: {fileID: 1540208307694872437}
 --- !u!114 &3633344721987565100
@@ -343,6 +345,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 75, y: 75}
   m_EdgeRadius: 0
+--- !u!114 &7727775980107100125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192848428323025456}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216cac50eb1232a4784206477ca39df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreStr: {fileID: 0}
 --- !u!1001 &6192848428267041611
 PrefabInstance:
   m_ObjectHideFlags: 0

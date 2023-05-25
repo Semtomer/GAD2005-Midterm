@@ -9,7 +9,7 @@ using System;
 public class ScoreManager : MonoBehaviour
 {
 
-    public TMP_Text currentScoreStr;
+    //public TMP_Text currentScoreStr;
     private int currentScore;
     private int highScore;
 
@@ -18,15 +18,17 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         // Get the high score from PlayerPrefs
-        highScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        highScore = PlayerPrefs.GetInt(HighScoreKey);
 
         // Get the current score from PlayerPrefs
-        currentScore = PlayerPrefs.GetInt("CurrentScore", 0);
+        currentScore = PlayerPrefs.GetInt("CurrentScore");
+        ResetScore();
     }
 
     // Increase the score
     public void IncreaseScore(int amount)
     {
+        highScore = PlayerPrefs.GetInt(HighScoreKey);
         // Save the last score to PlayerPrefs
         PlayerPrefs.SetInt("LastScore", amount);
         PlayerPrefs.Save();
@@ -72,7 +74,8 @@ public class ScoreManager : MonoBehaviour
 
     void scoreToInt()
     {
-        currentScoreStr.text= "" + currentScore;
+      //  Debug.Log("" + PlayerPrefs.GetInt("CurrentScore"));
+      // currentScoreStr.text= "" + PlayerPrefs.GetInt("CurrentScore");
     }
 
 

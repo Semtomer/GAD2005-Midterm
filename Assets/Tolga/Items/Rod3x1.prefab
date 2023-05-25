@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 6688307049728674511}
   - component: {fileID: 5076481103759001930}
   - component: {fileID: 5818393635857275066}
+  - component: {fileID: 6528690949363387780}
   m_Layer: 5
   m_Name: Rod3x1
   m_TagString: Untagged
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a400a2d3236a1148b3c35f0d1ae6723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 0}
   LeftBottomCornerBound: {fileID: 585289611000540694}
   RightTopCornerBound: {fileID: 7969823043307844943}
 --- !u!114 &3119435001444558132
@@ -278,6 +280,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 75, y: 75}
   m_EdgeRadius: 0
+--- !u!114 &6528690949363387780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655430062093045796}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 216cac50eb1232a4784206477ca39df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreStr: {fileID: 0}
 --- !u!1 &7969823043307844943
 GameObject:
   m_ObjectHideFlags: 0
