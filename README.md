@@ -1,5 +1,5 @@
 # GAD2005-Midterm
-This repository is the midterm project of the GAD2005 Game Development Practices course I took in the Digital Game Design department at Bahcesehir University.
+This repository is the midterm project of the GAD2005 Game Development Practices course I took in the Digital Game Design department at Bahcesehir University. (3rd grade 2nd semester) 
 
 Contributors to the project:     
 https://github.com\semtomer - Tolga YILMAZ     
