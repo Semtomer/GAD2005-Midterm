@@ -2,10 +2,10 @@
 This repository is the midterm project of the GAD2005 Game Development Practices course I took in the Digital Game Design department at Bahcesehir University. (3rd grade 2nd semester) 
 
 Contributors to the project:     
-https://github.com\semtomer - Tolga YILMAZ     
-https://github.com\WrinePhantom - Mehmet Kaan TOPRAKSEVEN      
-https://github.com\UzayYildiz - Uzay YILDIZ      
-https://github.com\ahmetertok - Ahmet ERTOK
+https://github.com/Semtomer - Tolga YILMAZ     
+https://github.com/WrinePhantom - Mehmet Kaan TOPRAKSEVEN      
+https://github.com/UzayYildiz - Uzay YILDIZ      
+https://github.com/ahmetertok - Ahmet ERTOK
 
 Note: When you open the project with the unity editor, first open the scene named "Start_Page" and then set the Resolution to 1920x1080.
 
